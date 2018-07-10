@@ -125,11 +125,11 @@ def train_net(n_epochs):
     # prepare the net for training
     net.train()
 
-    for epoch in range(n_epochs):  # loop over the dataset multiple times
+    for epoch in range(n_epochs): 
 
         running_loss = 0.0
 
-        # train on batches of data, assumes you already have train_loader
+        # train on batches of data
         for batch_i, data in enumerate(train_loader):
             # get the input images and their corresponding labels
             images = data['image']
@@ -217,5 +217,5 @@ Viz = visualize_output(test_images, test_outputs, gt_pts)
 model_dir = 'saved_models/'
 model_name = 'mark1_face.pt'
 
-# after training, save your model parameters in the dir 'saved_models'
+#save the model
 torch.save(net.state_dict(), model_dir+model_name)
